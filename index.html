@@ -4,22 +4,59 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f">
-<title>Scanner | lJWILLYl Kubrow Companion</title>
-<link rel="stylesheet" href="styles.css?v=5-2-0">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js?v=5-2-0"></script>
+<title>lJWILLYl Kubrow Companion | Kubrow Genetics, Scanner & Marketplace</title>
+<link rel="stylesheet" href="styles.css?v=6-0-0">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js?v=6-0-0"></script>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-<link rel="stylesheet" href="mobile-ui.css?v=5-2-0">
-<link rel="stylesheet" href="screenshot-validator.css?v=5-2-0"></head>
+<link rel="stylesheet" href="mobile-ui.css?v=6-0-0">
+<link rel="stylesheet" href="screenshot-validator.css?v=6-0-0"><link rel="stylesheet" href="home-v6.css?v=6-0-0">
+</head>
 <body>
 <main class="shell">
 <header class="appHeader">
   <a class="appBrand" href="index.html"><span class="brandMark">W</span><span><strong>lJWILLYl</strong><small>Kubrow Companion</small></span></a>
-  <nav><a class="current" href="index.html">Scanner</a><a href="kennel.html">My Kennel</a><a href="dna.html">DNA Explorer</a><a href="marketplace.html">Marketplace</a><a href="genetics.html">Genetics</a><a href="stats.html">Statistics</a><a href="admin.html">Admin</a></nav>
+  <nav><a class="current" href="index.html">Home & Scanner</a><a href="kennel.html">My Kennel</a><a href="dna.html">DNA Explorer</a><a href="marketplace.html">Marketplace</a><a href="genetics.html">Genetics</a><a href="stats.html">Statistics</a><a href="admin.html">Admin</a></nav>
 </header>
 
-<section class="hero">
-  <div class="eyebrow">Kubrow genetics toolkit</div>
-  <h1>Scan exact palettes or estimate from fur.</h1>
+<section class="v6Hero" aria-labelledby="homeTitle">
+  <div class="v6HeroCopy">
+    <div class="eyebrow">The community Kubrow genetics platform</div>
+    <h1 id="homeTitle">Discover, verify and trade exceptional Kubrows.</h1>
+    <p>Scan exact Warframe palettes, build a private kennel, explore verified DNA and publish Kubrows directly to the community Marketplace.</p>
+    <div class="v6HeroActions">
+      <a class="v6Button primaryAction" href="#scanner">Scan a Kubrow</a>
+      <a class="v6Button secondaryAction" href="marketplace.html">Browse Marketplace</a>
+    </div>
+    <div class="v6Trust"><span>✓ Palette verification</span><span>✓ Private kennel</span><span>✓ Public DNA records</span></div>
+  </div>
+  <aside class="v6HeroPanel" aria-label="Community overview">
+    <div class="v6PanelTop"><span class="v6Pulse"></span><strong>Live community database</strong></div>
+    <div class="v6Stats" id="homeStats">
+      <article><strong id="homeVerified">—</strong><span>Verified DNA</span></article>
+      <article><strong id="homeListings">—</strong><span>Active listings</span></article>
+      <article><strong id="homeBreeds">—</strong><span>Breeds recorded</span></article>
+    </div>
+    <p id="homeStatsStatus" class="v6Status">Connecting to the database…</p>
+  </aside>
+</section>
+
+<section class="v6Shortcuts" aria-label="Main features">
+  <a href="#scanner"><span class="v6Icon">◎</span><strong>Colour Scanner</strong><small>Verify exact palette colours</small></a>
+  <a href="kennel.html"><span class="v6Icon">⌂</span><strong>My Kennel</strong><small>Manage your private collection</small></a>
+  <a href="dna.html"><span class="v6Icon">◇</span><strong>DNA Explorer</strong><small>Search community genetics</small></a>
+  <a href="marketplace.html"><span class="v6Icon">◈</span><strong>Marketplace</strong><small>Buy and list Kubrows</small></a>
+</section>
+
+<section class="v6Section" aria-labelledby="recentHeading">
+  <div class="v6SectionHead"><div><div class="eyebrow">Community activity</div><h2 id="recentHeading">Recently verified DNA</h2></div><a href="dna.html">Explore all DNA →</a></div>
+  <div id="homeRecent" class="v6RecentGrid">
+    <article class="v6Skeleton"></article><article class="v6Skeleton"></article><article class="v6Skeleton"></article><article class="v6Skeleton"></article>
+  </div>
+</section>
+
+<section id="scanner" class="hero v6ScannerIntro">
+  <div class="eyebrow">Kubrow colour scanner</div>
+  <h2>Scan exact palettes or estimate from fur.</h2>
   <p>Use Exact Palette Scan whenever the Appearance boxes are prepared. Advanced Fur Estimate remains available for ordinary Kubrow screenshots.</p>
 </section>
 
@@ -149,7 +186,8 @@
 
 <footer>lJWILLYl Kubrow Companion</footer>
 </main>
-<script src="companion-types.js?v=5-2-0"></script>
-<script src="screenshot-validator.js?v=5-2-0"></script>
-<script src="app.js?v=5-2-0"></script>
-<script src="mobile-ui.js?v=5-2-0"></script></body></html>
+<script src="companion-types.js?v=6-0-0"></script>
+<script src="screenshot-validator.js?v=6-0-0"></script>
+<script src="home-dashboard.js?v=6-0-0"></script>
+<script src="app.js?v=6-0-0"></script>
+<script src="mobile-ui.js?v=6-0-0"></script></body></html>

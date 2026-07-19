@@ -5,7 +5,7 @@
     supabaseUrl: "https://mxboguiriifkmsmcusjt.supabase.co",
     supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14Ym9ndWlyaWlma21zbWN1c2p0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQwNDE5NzMsImV4cCI6MjA5OTYxNzk3M30.QAG5eGfOfZkSoL_mB55AVEgoQn4ZHAaQavD4yVt0zAM",
     storageBucket: "kennel-screenshots",
-    appVersion: "5.2.0"
+    appVersion: "6.0.0"
   });
 
   let client = null;
