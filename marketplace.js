@@ -3,6 +3,12 @@
 (() => {
   const BUCKET = window.KUBROW_CONFIG.storageBucket;
   const ACTIVE_STATUSES = ['for_sale', 'open_to_offers', 'reserved'];
+  const PUBLIC_LISTING_COLUMNS = [
+    'id', 'kdna_id', 'name', 'companion_type', 'breed', 'pattern', 'build_type',
+    'primary_colour', 'secondary_colour', 'tertiary_colour', 'eye_colour', 'accent_colour',
+    'verification_source', 'imprints_remaining', 'gender', 'trade_status', 'asking_price',
+    'listing_notes', 'screenshot_path', 'created_at', 'is_public'
+  ].join(',');
 
   const $ = (id) => document.getElementById(id);
   const client = window.KubrowApp?.getSupabaseClient();
@@ -54,7 +60,7 @@
       record.name, record.kdna_id, record.breed, record.pattern, record.build_type,
       record.primary_colour, record.secondary_colour, record.tertiary_colour,
       record.eye_colour, record.accent_colour, record.companion_type,
-      record.notes
+      record.listing_notes
     ].filter(Boolean).join(' ').toLowerCase();
   }
 
@@ -178,7 +184,7 @@
     try {
       const { data, error } = await client
         .from('kennel_kubrows')
-        .select('*')
+        .select(PUBLIC_LISTING_COLUMNS)
         .eq('is_public', true)
         .in('trade_status', ACTIVE_STATUSES)
         .order('created_at', { ascending: false });
