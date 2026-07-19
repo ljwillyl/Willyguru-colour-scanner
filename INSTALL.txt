@@ -1,0 +1,24 @@
+lJWILLYl Kubrow Companion — Version 6.1.0 True Homepage
+
+ADD:
+- scanner.html
+- home.css
+- home.js
+
+REPLACE:
+- index.html
+- kennel.html
+- dna.html
+- marketplace.html
+- genetics.html
+- stats.html
+- admin.html
+- certificate.html
+- companion-guide.html
+
+SQL:
+- None
+
+IMPORTANT:
+The scanner has moved from index.html to scanner.html. index.html is now a true standalone homepage.
+Upload every supplied file to the repository root and replace matching files.

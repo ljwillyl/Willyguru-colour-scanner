@@ -3,191 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111f">
-<title>lJWILLYl Kubrow Companion | Kubrow Genetics, Scanner & Marketplace</title>
-<link rel="stylesheet" href="styles.css?v=6-0-0">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js?v=6-0-0"></script>
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-<link rel="stylesheet" href="mobile-ui.css?v=6-0-0">
-<link rel="stylesheet" href="screenshot-validator.css?v=6-0-0"><link rel="stylesheet" href="home-v6.css?v=6-0-0">
+<meta name="theme-color" content="#050a12">
+<title>lJWILLYl Kubrow Companion</title>
+<meta name="description" content="Scan, verify, catalogue and trade Warframe Kubrow genetics.">
+<link rel="stylesheet" href="home.css?v=6-1-0">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js?v=6-1-0"></script>
+<script src="home.js?v=6-1-0" defer></script>
 </head>
 <body>
-<main class="shell">
-<header class="appHeader">
-  <a class="appBrand" href="index.html"><span class="brandMark">W</span><span><strong>lJWILLYl</strong><small>Kubrow Companion</small></span></a>
-  <nav><a class="current" href="index.html">Home & Scanner</a><a href="kennel.html">My Kennel</a><a href="dna.html">DNA Explorer</a><a href="marketplace.html">Marketplace</a><a href="genetics.html">Genetics</a><a href="stats.html">Statistics</a><a href="admin.html">Admin</a></nav>
+<div class="ambient ambientOne"></div><div class="ambient ambientTwo"></div>
+<header class="siteHeader">
+  <a class="brand" href="index.html" aria-label="Kubrow Companion home"><span class="brandSigil">W</span><span><b>lJWILLYl</b><small>Kubrow Companion</small></span></a>
+  <button class="menuButton" id="menuButton" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="siteNav"><a class="active" href="index.html">Home</a><a href="scanner.html">Scanner</a><a href="dna.html">DNA Explorer</a><a href="marketplace.html">Marketplace</a><a href="kennel.html">My Kennel</a><a href="stats.html">Statistics</a></nav>
 </header>
-
-<section class="v6Hero" aria-labelledby="homeTitle">
-  <div class="v6HeroCopy">
-    <div class="eyebrow">The community Kubrow genetics platform</div>
-    <h1 id="homeTitle">Discover, verify and trade exceptional Kubrows.</h1>
-    <p>Scan exact Warframe palettes, build a private kennel, explore verified DNA and publish Kubrows directly to the community Marketplace.</p>
-    <div class="v6HeroActions">
-      <a class="v6Button primaryAction" href="#scanner">Scan a Kubrow</a>
-      <a class="v6Button secondaryAction" href="marketplace.html">Browse Marketplace</a>
-    </div>
-    <div class="v6Trust"><span>✓ Palette verification</span><span>✓ Private kennel</span><span>✓ Public DNA records</span></div>
+<main>
+<section class="hero">
+  <div class="heroCopy">
+    <div class="kicker"><span></span> Community genetics platform</div>
+    <h1>Know the DNA.<br><em>Build the legacy.</em></h1>
+    <p>Scan exact Kubrow colours, preserve verified genetics, organise your private kennel and list imprints for the community—all in one companion.</p>
+    <div class="heroActions"><a class="button primary" href="scanner.html">Start a palette scan <span>→</span></a><a class="button secondary" href="marketplace.html">Browse Marketplace</a></div>
+    <div class="trustRow"><span><b>Palette</b> verified records</span><span><b>Private</b> breeder kennels</span><span><b>Direct</b> community trading</span></div>
   </div>
-  <aside class="v6HeroPanel" aria-label="Community overview">
-    <div class="v6PanelTop"><span class="v6Pulse"></span><strong>Live community database</strong></div>
-    <div class="v6Stats" id="homeStats">
-      <article><strong id="homeVerified">—</strong><span>Verified DNA</span></article>
-      <article><strong id="homeListings">—</strong><span>Active listings</span></article>
-      <article><strong id="homeBreeds">—</strong><span>Breeds recorded</span></article>
-    </div>
-    <p id="homeStatsStatus" class="v6Status">Connecting to the database…</p>
-  </aside>
-</section>
-
-<section class="v6Shortcuts" aria-label="Main features">
-  <a href="#scanner"><span class="v6Icon">◎</span><strong>Colour Scanner</strong><small>Verify exact palette colours</small></a>
-  <a href="kennel.html"><span class="v6Icon">⌂</span><strong>My Kennel</strong><small>Manage your private collection</small></a>
-  <a href="dna.html"><span class="v6Icon">◇</span><strong>DNA Explorer</strong><small>Search community genetics</small></a>
-  <a href="marketplace.html"><span class="v6Icon">◈</span><strong>Marketplace</strong><small>Buy and list Kubrows</small></a>
-</section>
-
-<section class="v6Section" aria-labelledby="recentHeading">
-  <div class="v6SectionHead"><div><div class="eyebrow">Community activity</div><h2 id="recentHeading">Recently verified DNA</h2></div><a href="dna.html">Explore all DNA →</a></div>
-  <div id="homeRecent" class="v6RecentGrid">
-    <article class="v6Skeleton"></article><article class="v6Skeleton"></article><article class="v6Skeleton"></article><article class="v6Skeleton"></article>
+  <div class="heroVisual" aria-hidden="true">
+    <div class="orbit orbitA"></div><div class="orbit orbitB"></div>
+    <div class="crest"><div class="crestEar left"></div><div class="crestEar right"></div><div class="crestFace"><span>W</span></div></div>
+    <div class="floatingCard cardOne"><small>VERIFICATION</small><b>Palette confirmed</b><span class="statusDot"></span></div>
+    <div class="floatingCard cardTwo"><small>GENETICS</small><b>Lotus · Bulky</b><div class="swatches"><i></i><i></i><i></i></div></div>
   </div>
 </section>
 
-<section id="scanner" class="hero v6ScannerIntro">
-  <div class="eyebrow">Kubrow colour scanner</div>
-  <h2>Scan exact palettes or estimate from fur.</h2>
-  <p>Use Exact Palette Scan whenever the Appearance boxes are prepared. Advanced Fur Estimate remains available for ordinary Kubrow screenshots.</p>
+<section class="statsBand" aria-label="Community statistics">
+ <article><span id="dnaCount">—</span><small>DNA records</small></article>
+ <article><span id="verifiedCount">—</span><small>Verified scans</small></article>
+ <article><span id="marketCount">—</span><small>Active listings</small></article>
+ <article><span id="breedCount">—</span><small>Breeds recorded</small></article>
 </section>
 
-<nav class="modeTabs">
-  <button class="modeTab active" data-mode="palette">Exact Palette Scan</button>
-  <button class="modeTab" data-mode="fur">Advanced Fur Estimate</button>
-</nav>
-
-<section id="paletteMode" class="modePanel active">
-  <section class="wizardShell">
-    <div class="wizardTop">
-      <div>
-        <div class="eyebrow">Exact Palette Scan</div>
-        <h2 id="wizardTitle">Prepare and upload</h2>
-      </div>
-      <div class="wizardCount"><span id="wizardCurrent">1</span> / 6</div>
-    </div>
-    <div class="wizardProgress" aria-label="Scanner progress">
-      <button class="wizardDot active" data-wizard-step="1"><span>1</span><small>Upload</small></button>
-      <button class="wizardDot" data-wizard-step="2"><span>2</span><small>Sample</small></button>
-      <button class="wizardDot" data-wizard-step="3"><span>3</span><small>Colours</small></button>
-      <button class="wizardDot" data-wizard-step="4"><span>4</span><small>Details</small></button>
-      <button class="wizardDot" data-wizard-step="5"><span>5</span><small>Account</small></button>
-      <button class="wizardDot" data-wizard-step="6"><span>6</span><small>Save</small></button>
-    </div>
-
-    <section class="wizardPane active" data-pane="1">
-      <section class="card wizardCard">
-        <h2>Prepare the colour boxes</h2>
-        <ol>
-          <li>Click and drag the white-and-greyed-out <b>Primary / Base Color</b> box into <b>Secondary</b>.</li>
-          <li>Take the <b>Secondary</b> box and drag it back into <b>Primary / Base Color</b>.</li>
-          <li>Click and drag the white-and-greyed-out <b>Tertiary</b> box into <b>Emissive</b>.</li>
-          <li>Take the <b>Emissive</b> box and drag it back into <b>Tertiary</b>.</li>
-          <li>Take a full, uncropped Appearance screenshot with the name, Fur Pattern row and complete interface visible.</li>
-        </ol>
-        <div class="notice">Palette scans are saved as <b>Palette Verified</b>. The scanner will check image quality and crop risk automatically before allowing you to continue.</div>
-        <input id="paletteFile" class="nativeFileInput" type="file" accept="image/png,image/jpeg,image/webp">
-        <label class="primary uploadLabel" for="paletteFile">Upload Appearance screenshot</label>
-        <p id="paletteStatus" class="muted">No screenshot loaded.</p>
-        <section id="screenshotValidation" class="validatorPanel" hidden aria-live="polite">
-          <div class="validatorHeader"><div><div class="eyebrow">Automatic checks</div><h3 id="validatorTitle">Analysing screenshot…</h3></div><span id="validatorBadge" class="validatorBadge">WAIT</span></div>
-          <div class="validatorScore"><div><b>Screenshot quality</b><strong id="validatorScore">0 / 100</strong></div><div class="validatorBar"><span id="validatorBar"></span></div></div>
-          <div id="validatorChecks" class="validatorChecks"></div>
-          <p id="validatorMessage" class="validatorMessage"></p>
-        </section>
-      </section>
-    </section>
-
-    <section class="wizardPane" data-pane="2">
-      <section id="paletteWorkspace" class="card" hidden>
-        <div class="head"><div><div class="eyebrow">Precise placement</div><h2>Place and lock each sampler</h2></div><button id="resetPaletteMarkers" class="secondary">Reset positions</button></div>
-        <p class="muted">Move each crosshair fully inside the tiny flat rectangle. Use the magnifier and lock each sampler when it is clean.</p>
-        <div class="samplerControls">
-          <label class="sliderLabel">Sampling area <span><strong id="sampleSizeValue">2</strong> px radius</span></label>
-          <input id="sampleSize" type="range" min="1" max="10" value="2">
-          <div class="samplerButtons"><button id="smallestSample" class="ghost">Use 1-pixel sample</button><button id="rememberLayout" class="secondary">Remember this layout</button></div>
-        </div>
-        <div class="placementSteps"><button class="step active" data-focus="0">1 · Base</button><button class="step" data-focus="1">2 · Secondary</button><button class="step" data-focus="2">3 · Tertiary</button></div>
-        <div class="imageStage">
-          <div id="paletteImageWrap" class="imageWrap"><canvas id="paletteCanvas"></canvas><button class="marker" id="paletteMarker0" data-i="0"></button><button class="marker" id="paletteMarker1" data-i="1"></button><button class="marker" id="paletteMarker2" data-i="2"></button></div>
-          <aside class="magnifierCard"><canvas id="magnifier" width="180" height="180"></canvas><div id="magnifierLabel">Move a sampler</div><div id="liveConfidence" class="liveConfidence">Waiting for sample</div><button id="lockSampler" class="secondary">Lock current sampler</button></aside>
-        </div>
-      </section>
-    </section>
-
-    <section class="wizardPane" data-pane="3">
-      <section id="paletteResultsCard" class="card" hidden><div class="eyebrow">Review colours</div><h2>Detected palette</h2><div id="paletteResults" class="results"></div><div id="overallConfidence" class="overallConfidence"></div><div id="paletteWarning" class="notice" hidden></div></section>
-    </section>
-
-    <section class="wizardPane" data-pane="4">
-      <section id="detailsCard" class="card" hidden>
-        <div class="head"><div><div class="eyebrow">Kubrow record</div><h2>Check the details</h2></div><span id="ocrBadge" class="badge">Reading text…</span></div>
-        <div class="grid three">
-          <label>Kubrow name *<input id="kubrowName"></label>
-          <label>Companion type *<select id="companionType" data-companion-controller data-prefix=""><option value="kubrow">Kubrow</option><option value="helminth_charger">Helminth Charger</option><option value="hybrid">Hybrid / glitched companion</option></select></label>
-          <label>Breed *<select id="breed"><option value="">Choose breed…</option><option>Chesa</option><option>Huras</option><option>Raksa</option><option>Sahasa</option><option>Sunika</option><option>Helminth Charger</option><option>Hybrid / Glitched</option></select></label>
-          <label>Fur / skin pattern *<select id="pattern"><option value="">Choose pattern…</option><option>Domino</option><option>Hound</option><option>Lotus</option><option>Merle</option><option>Patchy</option><option>Striped</option><option>Helminth</option><option>Other / Unknown</option></select></label>
-          <label>Body / build<select id="buildType"><option value="">Unknown</option><option>Bulky</option><option>Athletic</option><option>Skinny</option><option>Helminth</option><option>Hybrid: Kubrow body</option><option>Hybrid: Charger body</option></select></label>
-          <label>Gender<select id="gender"><option value="">Unknown</option><option>Male</option><option>Female</option></select></label>
-          <label data-eye-label="main">Eye colour <select id="eyes"><option value="">Unknown</option><option>Green</option><option>Light gold</option><option>Pink</option><option>Purple</option><option>Blue</option><option>Orange / Red</option><option>Lilac</option><option>Black</option><option>Gold</option><option>Custom palette colour</option></select></label>
-          <label>Fourth channel role<select id="channel4Role"><option value="eye">Eye / inherited energy</option></select></label>
-          <label data-accent-wrap="main" hidden>Accent / fourth colour<input id="accentColour" placeholder="Official palette name"></label>
-          <label>Imprints remaining<select id="imprints"><option value="">Unknown</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></label>
-          <label>Trade status<select id="tradeStatus"><option value="private">Private</option><option value="not_for_sale">Not for sale</option><option value="open_to_offers">Open to offers</option><option value="for_sale">For sale</option></select></label>
-          <label>Asking price<input id="askingPrice" type="number" min="0"></label>
-        </div>
-        <p class="notice" data-hybrid-help="main" hidden><b>Hybrid record:</b> choose the visible body and identify whether the fourth channel acts as eye, accent, energy, or a shared channel. Hybrid behaviour can vary, so this records the observed appearance without forcing an assumption.</p>
-        <label class="confirmDetails"><input id="detailsConfirmed" type="checkbox"><span>I checked the name, breed, pattern and three detected colours.</span></label>
-        <label>Private notes<textarea id="notes" rows="3"></textarea></label>
-      </section>
-    </section>
-
-    <section class="wizardPane" data-pane="5">
-      <section class="card"><div id="signedOut"><h2>Sign in to My Kennel</h2><p class="muted">Your scan is saved locally while you sign in.</p><div class="grid two"><label>Email<input id="email" type="email"></label><label>Password<input id="password" type="password"></label></div><div class="actions"><button id="signIn" class="secondary">Sign in</button><a href="kennel.html">Create/manage account</a></div></div><div id="signedIn" hidden><div class="successPanel"><strong>Signed in</strong><span id="accountEmail"></span></div><button id="signOut" class="ghost">Sign out</button></div><p id="saveStatus" class="muted"></p></section>
-    </section>
-
-    <section class="wizardPane" data-pane="6">
-      <section class="card"><div class="eyebrow">Final review</div><h2>Ready for My Kennel</h2><div id="finalReview" class="finalReview"></div><button id="saveKennel" class="primary">Save Palette Verified Kubrow</button><p id="finalSaveStatus" class="muted"></p></section>
-    </section>
-
-    <div class="wizardNav"><button id="wizardBack" class="ghost" disabled>Back</button><button id="wizardNext" class="primary compactPrimary">Next</button></div>
-  </section>
+<section class="section featureSection">
+ <div class="sectionHead"><div><span class="kicker">One connected toolkit</span><h2>Everything a breeder needs.</h2></div><p>Move from screenshot to searchable DNA record, then publish an imprint listing without entering the same Kubrow twice.</p></div>
+ <div class="featureGrid">
+  <a class="featureCard featured" href="scanner.html"><span class="featureNumber">01</span><div class="featureIcon">⌁</div><h3>Exact Palette Scanner</h3><p>Validate a full Appearance screenshot and match all three inherited colours against the official palette database.</p><b>Open scanner →</b></a>
+  <a class="featureCard" href="kennel.html"><span class="featureNumber">02</span><div class="featureIcon">◇</div><h3>My Kennel</h3><p>Keep private breeding records, screenshots, imprint counts and listing controls under your own account.</p><b>Manage kennel →</b></a>
+  <a class="featureCard" href="dna.html"><span class="featureNumber">03</span><div class="featureIcon">◎</div><h3>DNA Explorer</h3><p>Search community genetics by breed, pattern, build and inherited colours.</p><b>Explore DNA →</b></a>
+  <a class="featureCard" href="marketplace.html"><span class="featureNumber">04</span><div class="featureIcon">△</div><h3>Marketplace</h3><p>Discover listed Kubrows and publish directly from your existing private kennel record.</p><b>View listings →</b></a>
+ </div>
 </section>
 
-<section id="furMode" class="modePanel">
-  <section class="card">
-    <h2>Advanced Fur Estimate</h2>
-    <p class="muted">Use a normal Nexus-pattern screenshot. Sample several clean fur points for each inherited colour. This is an estimate and does not receive Palette Verified status.</p>
-    <input id="furFile" class="nativeFileInput" type="file" accept="image/*">
-    <label class="primary uploadLabel" for="furFile">Upload normal Kubrow screenshot</label>
-    <p id="furStatus" class="muted">No screenshot loaded.</p>
-  </section>
-  <section id="furWorkspace" class="card" hidden>
-    <div class="furToolbar">
-      <button class="furSlot active" data-slot="0">Primary</button>
-      <button class="furSlot" data-slot="1">Secondary</button>
-      <button class="furSlot" data-slot="2">Tertiary</button>
-      <button id="furUndo" class="ghost">Undo</button>
-      <button id="furClear" class="ghost">Clear slot</button>
-    </div>
-    <div class="imageWrap"><canvas id="furCanvas"></canvas></div>
-    <div id="furResults" class="results"></div>
-    <div class="notice">Fur estimates should be confirmed later with an Appearance palette screenshot before being treated as exact.</div>
-  </section>
+<section class="section recentSection">
+ <div class="sectionHead compact"><div><span class="kicker">Live from the database</span><h2>Recently verified.</h2></div><a href="dna.html">View all DNA →</a></div>
+ <div id="recentGrid" class="recentGrid"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+ <p id="recentMessage" class="message" hidden></p>
 </section>
 
-<footer>lJWILLYl Kubrow Companion</footer>
+<section class="ctaSection"><div><span class="kicker">Ready to catalogue your companion?</span><h2>Your next verified record starts with one screenshot.</h2></div><a class="button primary" href="scanner.html">Launch scanner <span>→</span></a></section>
 </main>
-<script src="companion-types.js?v=6-0-0"></script>
-<script src="screenshot-validator.js?v=6-0-0"></script>
-<script src="home-dashboard.js?v=6-0-0"></script>
-<script src="app.js?v=6-0-0"></script>
-<script src="mobile-ui.js?v=6-0-0"></script></body></html>
+<footer><a class="brand mini" href="index.html"><span class="brandSigil">W</span><span><b>lJWILLYl</b><small>Kubrow Companion</small></span></a><p>Community-built genetics tools for Warframe breeders.</p><nav><a href="companion-guide.html">Guide</a><a href="genetics.html">Genetics</a><a href="admin.html">Admin</a></nav></footer>
+</body></html>
